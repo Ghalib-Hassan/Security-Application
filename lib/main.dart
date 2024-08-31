@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       builder: (_, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'First Method',
+          title: 'Security Application',
           theme: lightTheme,
           darkTheme: darkTheme,
           home: child,

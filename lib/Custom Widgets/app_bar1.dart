@@ -4,8 +4,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:security_application/Utils/colors.dart';
 
-class MyAppBar extends StatelessWidget {
-  const MyAppBar({super.key});
+class MyAppBarOne extends StatelessWidget {
+  const MyAppBarOne({super.key});
 
   @override
   Widget build(BuildContext context) {
