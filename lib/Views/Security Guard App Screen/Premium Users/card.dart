@@ -35,8 +35,8 @@ class AddCard extends StatelessWidget {
                     BoxShadow(
                         spreadRadius: 0,
                         blurRadius: 10,
-                        color: Color(0x023982).withOpacity(1),
-                        offset: Offset(0, 5))
+                        color: const Color(0x00023982).withOpacity(1),
+                        offset: const Offset(0, 5))
                   ], color: appcolor, borderRadius: BorderRadius.circular(20)),
                   child: Padding(
                     padding: const EdgeInsets.all(28.0),
@@ -65,7 +65,7 @@ class AddCard extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: List.generate(
                                   4,
-                                  (index) => Icon(Icons.circle,
+                                  (index) => const Icon(Icons.circle,
                                       color: Colors.white, size: 10)),
                             ),
                             SizedBox(width: 5.w),
@@ -73,7 +73,7 @@ class AddCard extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: List.generate(
                                   4,
-                                  (index) => Icon(Icons.circle,
+                                  (index) => const Icon(Icons.circle,
                                       color: Colors.white, size: 10)),
                             ),
                             SizedBox(width: 5.w),
@@ -135,7 +135,7 @@ class AddCard extends StatelessWidget {
                                   Row(
                                     children: List.generate(
                                         4,
-                                        (index) => Icon(Icons.circle,
+                                        (index) => const Icon(Icons.circle,
                                             color: Colors.white, size: 8)),
                                   ),
                                 ],
@@ -152,7 +152,7 @@ class AddCard extends StatelessWidget {
               Text(
                 'Card Holder Name',
                 style: GoogleFonts.poppins(
-                    color: Color(0xff95A0AE),
+                    color: const Color(0xff95A0AE),
                     fontWeight: FontWeight.w400,
                     fontSize: 15.sp),
               ),
@@ -161,7 +161,7 @@ class AddCard extends StatelessWidget {
               Text(
                 'Card Number',
                 style: GoogleFonts.poppins(
-                    color: Color(0xff95A0AE),
+                    color: const Color(0xff95A0AE),
                     fontWeight: FontWeight.w400,
                     fontSize: 15.sp),
               ),
@@ -177,7 +177,7 @@ class AddCard extends StatelessWidget {
                         Text(
                           'Expiry',
                           style: GoogleFonts.poppins(
-                              color: Color(0xff95A0AE),
+                              color: const Color(0xff95A0AE),
                               fontWeight: FontWeight.w400,
                               fontSize: 15.sp),
                         ),
@@ -193,7 +193,7 @@ class AddCard extends StatelessWidget {
                         Text(
                           'CVV',
                           style: GoogleFonts.poppins(
-                              color: Color(0xff95A0AE),
+                              color: const Color(0xff95A0AE),
                               fontWeight: FontWeight.w400,
                               fontSize: 15.sp),
                         ),
