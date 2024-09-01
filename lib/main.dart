@@ -1,9 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:security_application/Theme/dark_theme.dart';
-import 'package:security_application/Theme/light_theme.dart';
-import 'package:security_application/Views/Security%20Guard%20App%20Screen/home_screen.dart';
+import 'package:security_app/firebase_options.dart';
+import 'package:security_app/splash/Sscreen.dart';
 import 'package:security_application/firebase_options.dart';
 
 void main() async {
@@ -20,19 +19,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(260, 650),
+      designSize: const Size(260,650),
       minTextAdapt: true,
       splitScreenMode: true,
-      builder: (_, child) {
+       builder: (_ , child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'Security Application',
-          theme: lightTheme,
-          darkTheme: darkTheme,
+          title: 'First Method',
+          debugShowMaterialGrid: false,
           home: child,
         );
       },
-      child: const HomeScreen(),
+      child: const Splash()
+      // const HomePage(title: 'First Method'),
     );
   }
 }
