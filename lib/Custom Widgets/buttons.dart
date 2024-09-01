@@ -16,21 +16,22 @@ class CustomButton extends StatefulWidget {
   Function onPressed;
   final double? horizontalPadding;
   final double? verticalPadding;
+  final bool isLoading;
 
-  CustomButton({
-    super.key,
-    required this.buttonText,
-    required this.onPressed,
-    this.buttonColor,
-    this.buttonFontSize,
-    this.buttonFontWeight,
-    this.buttonHeight,
-    this.buttonRadius,
-    this.buttonWidth,
-    this.textColor,
-    this.horizontalPadding,
-    this.verticalPadding,
-  });
+  CustomButton(
+      {super.key,
+      required this.buttonText,
+      required this.onPressed,
+      this.buttonColor,
+      this.buttonFontSize,
+      this.buttonFontWeight,
+      this.buttonHeight,
+      this.buttonRadius,
+      this.buttonWidth,
+      this.textColor,
+      this.horizontalPadding,
+      this.verticalPadding,
+      this.isLoading = false});
 
   @override
   State<CustomButton> createState() => _CustomButtonState();
@@ -55,14 +56,19 @@ class _CustomButtonState extends State<CustomButton> {
           ),
         ),
         onPressed: () => widget.onPressed(),
-        child: Text(
-          widget.buttonText,
-          style: GoogleFonts.poppins(
-            color: widget.textColor ?? Colors.white,
-            fontSize: widget.buttonFontSize?.toDouble() ?? 12.sp,
-            fontWeight: widget.buttonFontWeight ?? FontWeight.w600,
-          ),
-        ),
+        child: widget.isLoading
+            ? const CircularProgressIndicator(
+                color: Colors.white,
+                backgroundColor: Colors.amber,
+              )
+            : Text(
+                widget.buttonText,
+                style: GoogleFonts.poppins(
+                  color: widget.textColor ?? Colors.white,
+                  fontSize: widget.buttonFontSize?.toDouble() ?? 12.sp,
+                  fontWeight: widget.buttonFontWeight ?? FontWeight.w600,
+                ),
+              ),
       ),
     );
   }

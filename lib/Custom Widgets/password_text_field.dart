@@ -7,11 +7,14 @@ class PasswordTextField extends StatefulWidget {
   double? borderRadius;
   TextEditingController? myController;
 
+  String? Function(String?)? validator;
+
   PasswordTextField({
     super.key,
     required this.labelText,
     this.borderRadius,
     this.myController,
+    this.validator,
   });
 
   @override
@@ -19,7 +22,7 @@ class PasswordTextField extends StatefulWidget {
 }
 
 class _PasswordTextFieldState extends State<PasswordTextField> {
-  bool _obscureText = true; // Password is obscured by default
+  bool _obscureText = true;
 
   void obscure() {
     setState(() {
@@ -29,7 +32,8 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
+      validator: widget.validator,
       style: const TextStyle(color: Colors.black),
       obscureText: _obscureText,
       controller: widget.myController,

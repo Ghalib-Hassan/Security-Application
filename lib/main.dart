@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:security_application/Theme/dark_theme.dart';
 import 'package:security_application/Theme/light_theme.dart';
-import 'package:security_application/Views/Security%20Guard%20App%20Screen/home_screen.dart';
+// import 'package:security_application/Views/Security%20Guard%20App%20Screen/home_screen.dart';
+import 'package:security_application/Views/Security%20Guard%20Auth%20Screen/security_guard_signup.dart';
 import 'package:security_application/firebase_options.dart';
 
 void main() async {
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
           home: child,
         );
       },
-      child: const HomeScreen(),
+      child: const SecurityGuardSignup(),
     );
   }
 }
