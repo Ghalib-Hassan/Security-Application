@@ -49,15 +49,15 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
         ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(widget.borderRadius ?? 20),
-          borderSide: BorderSide(color: Colors.grey),
+          borderSide: const BorderSide(color: Colors.grey),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
-          borderSide: BorderSide(color: Colors.grey),
+          borderSide: const BorderSide(color: Colors.grey),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
-          borderSide: BorderSide(color: Colors.grey),
+          borderSide: const BorderSide(color: Colors.grey),
         ),
       ),
     );

@@ -166,7 +166,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         } else if (index == 3) {
                           navPush(context, const PremiumScreen());
                         } else if (index == 5) {
-                          bool? confirmed = await showDialog<bool>(
+                          final bool? confirmed = await showDialog<bool>(
                             context: context,
                             builder: (context) => AlertDialog(
                               title: Row(

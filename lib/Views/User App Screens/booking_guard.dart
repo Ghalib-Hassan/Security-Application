@@ -177,7 +177,7 @@ class _UserBookingGuardState extends State<UserBookingGuard> {
           height: 70.h,
           width: 250.w,
           decoration: BoxDecoration(
-              color: Color(0x00e8e8ed).withOpacity(1),
+              color: const Color(0x00e8e8ed).withOpacity(1),
               borderRadius: BorderRadius.circular(10)),
           child: Padding(
             padding: const EdgeInsets.all(8.0),
