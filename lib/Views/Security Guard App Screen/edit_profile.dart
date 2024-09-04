@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:security_application/Custom%20Widgets/buttons.dart';
-import 'package:security_application/Custom%20Widgets/text_field.dart';
+import 'package:security_application/Custom%20Widgets/text_field_editable.dart';
 import 'package:security_application/Utils/colors.dart';
 
 class EditProfile extends StatefulWidget {

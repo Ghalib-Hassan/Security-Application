@@ -25,10 +25,8 @@ class MyAppBarOne extends StatelessWidget {
               Row(
                 children: [
                   const CircleAvatar(
-                    radius: 30,
-                    backgroundImage: NetworkImage(
-                        'https://s3-alpha-sig.figma.com/img/6512/7b3f/2a9a4d53051431ce2a8b538cf40d5ab2?Expires=1725840000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ldscg5E6rmI-9SOhOtn8oTsrJBybqACFNycANbQ3LvJGGdOa5XBRQsXU~GpcUJI9gNF6CAuqAcIQNhyQMngac0bfya4NvlIcpA22zQDp79HCda3bZeL1VT31BWZQsnHa6jyuLMHgPP84LaoKKSIxHHF0fWKIxSEtgR~mQ4I0tgNUBLJaOKI3RleS113UR~X6dsJD9CCtDKaCQSwZM7BDkhDC5JzetRc3kZ6CgWpCRffhvlHLwtMwk6ywc1FC49juUtAzUOeHCTHeYEciaR5CIUYBQoOuiyO8p2dLrTqlPQ5hciNqwFR8X47FPIi-vRyEvQvMR4qNO0qQl79OoUVV5g__'),
-                  ),
+                      radius: 30,
+                      backgroundImage: AssetImage('Images/profile.png')),
                   SizedBox(
                     width: 10.w,
                   ),

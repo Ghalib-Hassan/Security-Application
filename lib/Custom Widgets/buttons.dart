@@ -57,9 +57,9 @@ class _CustomButtonState extends State<CustomButton> {
         ),
         onPressed: () => widget.onPressed(),
         child: widget.isLoading
-            ? const CircularProgressIndicator(
-                color: Colors.white,
-                backgroundColor: Colors.amber,
+            ? CircularProgressIndicator(
+                color: appcolor,
+                backgroundColor: Colors.white,
               )
             : Text(
                 widget.buttonText,

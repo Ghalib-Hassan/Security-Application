@@ -2,37 +2,54 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // ignore: must_be_immutable
-class MyTextField2 extends StatefulWidget {
+class SimpleAuthTextField extends StatefulWidget {
   String? labelText;
   String? hintText;
   double? borderRadius;
   TextEditingController? myController;
   String? Function(String?)? validator;
+  TextInputType? keyboardType;
 
-  MyTextField2({
-    super.key,
-    this.labelText,
-    this.hintText,
-    this.borderRadius,
-    this.myController,
-    this.validator,
-  });
+  SimpleAuthTextField(
+      {super.key,
+      this.labelText,
+      this.hintText,
+      this.borderRadius,
+      this.myController,
+      this.validator,
+      this.keyboardType});
 
   @override
-  State<MyTextField2> createState() => _MyTextField2State();
+  State<SimpleAuthTextField> createState() => _SimpleAuthTextFieldState();
 }
 
-class _MyTextField2State extends State<MyTextField2> {
+class _SimpleAuthTextFieldState extends State<SimpleAuthTextField> {
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      validator: widget.validator,
-      style: const TextStyle(color: Colors.black),
-      controller: widget.myController,
-      decoration: InputDecoration(
-        labelText: widget.labelText,
-        hintText: widget.hintText,
-        labelStyle: TextStyle(fontSize: 12.sp, color: Colors.black),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 2),
+      child: TextFormField(
+        keyboardType: widget.keyboardType,
+        validator: widget.validator,
+        style: const TextStyle(color: Colors.black),
+        controller: widget.myController,
+        decoration: InputDecoration(
+          labelText: widget.labelText,
+          hintText: widget.hintText,
+          labelStyle: TextStyle(fontSize: 12.sp, color: Colors.black),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(widget.borderRadius ?? 8.0),
+            borderSide: const BorderSide(color: Colors.grey),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(widget.borderRadius ?? 8.0),
+            borderSide: const BorderSide(color: Colors.grey),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(widget.borderRadius ?? 8.0),
+            borderSide: const BorderSide(color: Colors.grey),
+          ),
+        ),
       ),
     );
   }

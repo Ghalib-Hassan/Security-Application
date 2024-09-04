@@ -6,16 +6,16 @@ class PasswordTextField extends StatefulWidget {
   String labelText;
   double? borderRadius;
   TextEditingController? myController;
-
   String? Function(String?)? validator;
+  TextInputType? keyboardType;
 
-  PasswordTextField({
-    super.key,
-    required this.labelText,
-    this.borderRadius,
-    this.myController,
-    this.validator,
-  });
+  PasswordTextField(
+      {super.key,
+      required this.labelText,
+      this.borderRadius,
+      this.myController,
+      this.validator,
+      this.keyboardType});
 
   @override
   State<PasswordTextField> createState() => _PasswordTextFieldState();
@@ -33,6 +33,7 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      keyboardType: widget.keyboardType,
       validator: widget.validator,
       style: const TextStyle(color: Colors.black),
       obscureText: _obscureText,
@@ -47,7 +48,16 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
           onPressed: obscure,
         ),
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(widget.borderRadius ?? 10),
+          borderRadius: BorderRadius.circular(widget.borderRadius ?? 20),
+          borderSide: BorderSide(color: Colors.grey),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: BorderSide(color: Colors.grey),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: BorderSide(color: Colors.grey),
         ),
       ),
     );

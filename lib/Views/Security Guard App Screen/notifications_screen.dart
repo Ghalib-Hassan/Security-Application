@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:security_application/Custom%20Widgets/bottom_nav_clipper_shape.dart';
 import 'package:security_application/Custom%20Widgets/buttons.dart';
 import 'package:security_application/Utils/colors.dart';
-import 'package:security_application/Utils/nav_pus.dart';
+import 'package:security_application/Utils/nav_push.dart';
 import 'package:security_application/Views/Security%20Guard%20App%20Screen/home_screen.dart';
 import 'package:security_application/Views/Security%20Guard%20App%20Screen/profile_screen.dart';
 
@@ -63,10 +64,9 @@ class _NotificationsState extends State<Notifications> {
                           contentPadding:
                               const EdgeInsets.symmetric(horizontal: 2),
                           leading: CircleAvatar(
-                            radius: 20.r,
-                            backgroundImage: const NetworkImage(
-                                'https://s3-alpha-sig.figma.com/img/a4e9/e1a3/ceccba680ab397807f9579b2daed2f9c?Expires=1725840000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=kdLmenta~9tE7tllaiTRYX-6nTN5b6I7G~ecZQUpqaJ8Qmquzrhamn~hCbHxbMwapkELWtGnmrehcYegIkqLO7dPkNy3Ptawhi-2gwGIkU00u0vDrNDLvtI0gFRaqkKrr-lEZPy-NMabIrSfzVVXNaTseUuEEomzISxwggjt~YlrT5n4dNGwW50nGLI93lYJET1RUq0TXl0uEo8sZw5m65b6sfGEd1YFPIb5eyVaFKPj8a5AvWcUn4ZeJlJNY5ur6n-TQUo4GMTB8U8aaBRlo3vS~lcvcmVedmPBdh1xZR6L91QQVnbiAuu6yDnqHRIO1OlfXoaoC1xDfkfWDi~cEA__'),
-                          ),
+                              radius: 20.r,
+                              backgroundImage: const AssetImage(
+                                  'Images/NotificationProfile.png')),
                           title: RichText(
                               text: TextSpan(
                                   style: GoogleFonts.poppins(
@@ -115,10 +115,9 @@ class _NotificationsState extends State<Notifications> {
                           contentPadding:
                               const EdgeInsets.symmetric(horizontal: 2),
                           leading: CircleAvatar(
-                            radius: 20.r,
-                            backgroundImage: const NetworkImage(
-                                'https://s3-alpha-sig.figma.com/img/a4e9/e1a3/ceccba680ab397807f9579b2daed2f9c?Expires=1725840000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=kdLmenta~9tE7tllaiTRYX-6nTN5b6I7G~ecZQUpqaJ8Qmquzrhamn~hCbHxbMwapkELWtGnmrehcYegIkqLO7dPkNy3Ptawhi-2gwGIkU00u0vDrNDLvtI0gFRaqkKrr-lEZPy-NMabIrSfzVVXNaTseUuEEomzISxwggjt~YlrT5n4dNGwW50nGLI93lYJET1RUq0TXl0uEo8sZw5m65b6sfGEd1YFPIb5eyVaFKPj8a5AvWcUn4ZeJlJNY5ur6n-TQUo4GMTB8U8aaBRlo3vS~lcvcmVedmPBdh1xZR6L91QQVnbiAuu6yDnqHRIO1OlfXoaoC1xDfkfWDi~cEA__'),
-                          ),
+                              radius: 20.r,
+                              backgroundImage: const AssetImage(
+                                  'Images/NotificationProfile.png')),
                           title: RichText(
                               text: TextSpan(
                                   style: GoogleFonts.poppins(
@@ -163,12 +162,12 @@ class _NotificationsState extends State<Notifications> {
           ),
         ),
         child: ClipPath(
-          clipper: CustomClipperShape(),
+          clipper: GeneralCustomClipperShape(),
           child: BottomNavigationBar(
             currentIndex: _selectedIndex,
             onTap: (value) {
               if (value == 0) {
-                navPush(context, const HomeScreen());
+                navPush(context, const SecurityHomeScreen());
               } else if (value == 1) {
                 // navPush(context, const Notifications());
               } else if (value == 2) {
@@ -206,26 +205,5 @@ class _NotificationsState extends State<Notifications> {
         ),
       ),
     );
-  }
-}
-
-class CustomClipperShape extends CustomClipper<Path> {
-  @override
-  Path getClip(Size size) {
-    double radius = 25.0;
-    Path path = Path()
-      ..moveTo(0, radius)
-      ..quadraticBezierTo(0, 0, radius, 0)
-      ..lineTo(size.width - radius, 0)
-      ..quadraticBezierTo(size.width, 0, size.width, radius)
-      ..lineTo(size.width, size.height)
-      ..lineTo(0, size.height)
-      ..close();
-    return path;
-  }
-
-  @override
-  bool shouldReclip(CustomClipper<Path> oldClipper) {
-    return false;
   }
 }

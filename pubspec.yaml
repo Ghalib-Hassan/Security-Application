@@ -47,8 +47,8 @@ dependencies:
   fluttertoast: ^8.2.8
   syncfusion_flutter_sliders: ^26.2.11
   animated_rating_stars: ^1.0.1
+  shared_preferences: ^2.3.2
 
-  security_app: any
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -74,7 +74,6 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - Images/
-    - asset/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

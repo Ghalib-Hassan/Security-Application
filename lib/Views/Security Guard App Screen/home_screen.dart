@@ -3,22 +3,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:security_application/Custom%20Widgets/app_bar1.dart';
+import 'package:security_application/Custom%20Widgets/bottom_nav_clipper_shape.dart';
 import 'package:security_application/Custom%20Widgets/buttons.dart';
 import 'package:security_application/Custom%20Widgets/search_field.dart';
 import 'package:security_application/Utils/colors.dart';
-import 'package:security_application/Utils/nav_pus.dart';
+import 'package:security_application/Utils/nav_push.dart';
 import 'package:security_application/Views/Security%20Guard%20App%20Screen/notifications_screen.dart';
 import 'package:security_application/Views/Security%20Guard%20App%20Screen/profile_screen.dart';
 import 'package:security_application/Views/Security%20Guard%20App%20Screen/request_screen.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class SecurityHomeScreen extends StatefulWidget {
+  const SecurityHomeScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<SecurityHomeScreen> createState() => _SecurityHomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _SecurityHomeScreenState extends State<SecurityHomeScreen> {
   final int _selectedIndex = 0;
 
   @override
@@ -45,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
             height: 10.h,
           ),
           Container(
-            width: 195.w,
+            width: 240.w,
             height: 80.h,
             decoration: BoxDecoration(
                 color: Colors.white.withOpacity(1),
@@ -56,15 +57,14 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Row(
                 children: [
                   ClipRRect(
-                    borderRadius: BorderRadius.circular(5),
-                    child: Image.network(
-                      height: 80.h,
-                      width: 50.w,
-                      alignment: Alignment.topCenter,
-                      'https://s3-alpha-sig.figma.com/img/55b5/4abb/a3bc778cd83660ee1d8b9995f21e0cb5?Expires=1725840000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Xs9DLB4L~oQjPFSLHrVdJ2L4GQCYoJJhFsmz1HtQ0L0Fl3JeYeQCYYPbVY7xbEspSY0LMVAkXGy6uJCVFniRMazyGEUZmq3-OrrLZVaA7uURmln6ey4JpQwsIKDJLKZJ0bnozHqdXsL57CcNXUUi62zV7VuPrsB0keCMQzpnnFe82UCEuT2jHYnSsrD6SariiTv5Thc3kQWsXxdy1FF9KmPUqhjqrNG7DRd-crTEbIBd~Uk~4PFDbCQ6VOVsKFxcjut17E8iDLbLxgOpdFvKN0lgwkLdQWDmXdeEbgTlQdBBmvElusOVtnKsdIB9GxFbmZTP0ITXFW5AL5IpynCFYQ__',
-                      fit: BoxFit.fitWidth,
-                    ),
-                  ),
+                      borderRadius: BorderRadius.circular(5),
+                      child: Image.asset(
+                        'Images/UserSecurity.png',
+                        height: 80.h,
+                        width: 50.w,
+                        alignment: Alignment.topCenter,
+                        fit: BoxFit.fitWidth,
+                      )),
                   SizedBox(
                     width: 8.w,
                   ),
@@ -119,7 +119,7 @@ class _HomeScreenState extends State<HomeScreen> {
             height: 15.h,
           ),
           Container(
-            width: 195.w,
+            width: 240.w,
             height: 80.h,
             decoration: BoxDecoration(
                 color: Colors.white.withOpacity(1),
@@ -130,15 +130,14 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Row(
                 children: [
                   ClipRRect(
-                    borderRadius: BorderRadius.circular(5),
-                    child: Image.network(
-                      height: 80.h,
-                      width: 50.w,
-                      alignment: Alignment.topCenter,
-                      'https://s3-alpha-sig.figma.com/img/55b5/4abb/a3bc778cd83660ee1d8b9995f21e0cb5?Expires=1725840000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Xs9DLB4L~oQjPFSLHrVdJ2L4GQCYoJJhFsmz1HtQ0L0Fl3JeYeQCYYPbVY7xbEspSY0LMVAkXGy6uJCVFniRMazyGEUZmq3-OrrLZVaA7uURmln6ey4JpQwsIKDJLKZJ0bnozHqdXsL57CcNXUUi62zV7VuPrsB0keCMQzpnnFe82UCEuT2jHYnSsrD6SariiTv5Thc3kQWsXxdy1FF9KmPUqhjqrNG7DRd-crTEbIBd~Uk~4PFDbCQ6VOVsKFxcjut17E8iDLbLxgOpdFvKN0lgwkLdQWDmXdeEbgTlQdBBmvElusOVtnKsdIB9GxFbmZTP0ITXFW5AL5IpynCFYQ__',
-                      fit: BoxFit.fitWidth,
-                    ),
-                  ),
+                      borderRadius: BorderRadius.circular(5),
+                      child: Image.asset(
+                        'Images/UserSecurity.png',
+                        height: 80.h,
+                        width: 50.w,
+                        alignment: Alignment.topCenter,
+                        fit: BoxFit.fitWidth,
+                      )),
                   SizedBox(
                     width: 8.w,
                   ),
@@ -209,7 +208,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         child: ClipPath(
-          clipper: CustomClipperShape(),
+          clipper: GeneralCustomClipperShape(),
           child: BottomNavigationBar(
             currentIndex: _selectedIndex,
             onTap: (value) {
@@ -252,26 +251,5 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
     );
-  }
-}
-
-class CustomClipperShape extends CustomClipper<Path> {
-  @override
-  Path getClip(Size size) {
-    double radius = 25.0;
-    Path path = Path()
-      ..moveTo(0, radius)
-      ..quadraticBezierTo(0, 0, radius, 0)
-      ..lineTo(size.width - radius, 0)
-      ..quadraticBezierTo(size.width, 0, size.width, radius)
-      ..lineTo(size.width, size.height)
-      ..lineTo(0, size.height)
-      ..close();
-    return path;
-  }
-
-  @override
-  bool shouldReclip(CustomClipper<Path> oldClipper) {
-    return false;
   }
 }

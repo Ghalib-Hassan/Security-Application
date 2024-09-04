@@ -29,12 +29,12 @@ class _RequestScreenState extends State<RequestScreen> {
         width: double.infinity,
         child: Stack(
           children: [
-            Image.network(
+            Image.asset(
+              'Images/UserSecurity.png',
               alignment: Alignment.center,
               height: 250.h,
               width: double.infinity,
               fit: BoxFit.fitWidth,
-              'https://s3-alpha-sig.figma.com/img/55b5/4abb/a3bc778cd83660ee1d8b9995f21e0cb5?Expires=1725840000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Xs9DLB4L~oQjPFSLHrVdJ2L4GQCYoJJhFsmz1HtQ0L0Fl3JeYeQCYYPbVY7xbEspSY0LMVAkXGy6uJCVFniRMazyGEUZmq3-OrrLZVaA7uURmln6ey4JpQwsIKDJLKZJ0bnozHqdXsL57CcNXUUi62zV7VuPrsB0keCMQzpnnFe82UCEuT2jHYnSsrD6SariiTv5Thc3kQWsXxdy1FF9KmPUqhjqrNG7DRd-crTEbIBd~Uk~4PFDbCQ6VOVsKFxcjut17E8iDLbLxgOpdFvKN0lgwkLdQWDmXdeEbgTlQdBBmvElusOVtnKsdIB9GxFbmZTP0ITXFW5AL5IpynCFYQ__',
             ),
             Positioned(
               top: 50,
@@ -430,9 +430,8 @@ class _RequestScreenState extends State<RequestScreen> {
                                   child: Row(
                                     children: [
                                       const CircleAvatar(
-                                        backgroundImage: NetworkImage(
-                                            'https://s3-alpha-sig.figma.com/img/aac6/b1b1/8acee54880feb3c84cfacdb2ff89076d?Expires=1725840000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=E4WU27ot-pMn0G-0RjNY72aWp0NJtHGbfkfEbTy4YdJcWYecj3d~7UYCTW2Wo40Iyvg5phpe~rwqTzkGVXwV5JT-pn77DKONKqDZ0WkK841fId2vtvXd8yaN3YgkREo0I-ov0wOPmuzihk3vQ5MYyheLhtXXvYYhCl~s1lZ3baCc1uyYfN9ttIxlLHFk4ak6jRKA~NJYmzeBTvvygqqANAO8s22kG1WOyusy0-~zfKeGbN-tvBmo5V-2xRL1w~qs2vG9iwXAcJePjEhIJSayzrHi7n~qduNQJooy3oqVQeG6Vnacdrnnij4szLzF61R-DTBEX1dMR4FWJ5fmCHPnOA__'),
-                                      ),
+                                          backgroundImage: AssetImage(
+                                              'Images/UserReview.png')),
                                       SizedBox(
                                         width: 5.w,
                                       ),
@@ -468,7 +467,8 @@ class _RequestScreenState extends State<RequestScreen> {
                                 ),
                                 if (_isExpanded)
                                   ListView.builder(
-                                    physics: const NeverScrollableScrollPhysics(),
+                                    physics:
+                                        const NeverScrollableScrollPhysics(),
                                     shrinkWrap: true,
                                     itemCount: 3,
                                     itemBuilder: (context, index) {
@@ -512,9 +512,8 @@ class _RequestScreenState extends State<RequestScreen> {
                                               child: Row(
                                                 children: [
                                                   const CircleAvatar(
-                                                    backgroundImage: NetworkImage(
-                                                        'https://s3-alpha-sig.figma.com/img/aac6/b1b1/8acee54880feb3c84cfacdb2ff89076d?Expires=1725840000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=E4WU27ot-pMn0G-0RjNY72aWp0NJtHGbfkfEbTy4YdJcWYecj3d~7UYCTW2Wo40Iyvg5phpe~rwqTzkGVXwV5JT-pn77DKONKqDZ0WkK841fId2vtvXd8yaN3YgkREo0I-ov0wOPmuzihk3vQ5MYyheLhtXXvYYhCl~s1lZ3baCc1uyYfN9ttIxlLHFk4ak6jRKA~NJYmzeBTvvygqqANAO8s22kG1WOyusy0-~zfKeGbN-tvBmo5V-2xRL1w~qs2vG9iwXAcJePjEhIJSayzrHi7n~qduNQJooy3oqVQeG6Vnacdrnnij4szLzF61R-DTBEX1dMR4FWJ5fmCHPnOA__'),
-                                                  ),
+                                                      backgroundImage: AssetImage(
+                                                          'Images/UserReview.png')),
                                                   SizedBox(
                                                     width: 5.w,
                                                   ),

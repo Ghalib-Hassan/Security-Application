@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:security_application/Custom%20Widgets/buttons.dart';
-import 'package:security_application/Utils/nav_pus.dart';
+import 'package:security_application/Utils/nav_push.dart';
 import 'package:security_application/Views/Security%20Guard%20App%20Screen/Premium%20Users/card.dart';
 
 class PremiumScreen extends StatefulWidget {
